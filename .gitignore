@@ -36,3 +36,4 @@ Terraform/Environments/credentials
 .terraform/**
 .terraform.lock.hcl
 Terraform/Environments/Dev/.terraform/
+
