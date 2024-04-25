@@ -13,7 +13,7 @@ jobs:
         actions: read
         contents: read
         security-events: write
-        
+
       steps:
         - name: Clone repo
           uses: actions/checkout@v2
@@ -31,15 +31,11 @@ jobs:
             # Path to SARIF file relative to the root of the repository
             sarif_file: tfsec.sarif
 
-  terraform-ci:
-    runs-on: ubuntu-latest
+        - name: Checkout Repository
+          uses: actions/checkout@v2
 
-    steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
-
-    - name: Run TFLint
-      run: tflint
+        - name: Run TFLint
+          run: tflint
 
 #    - name: Terraform Plan
 #      run: terraform plan
