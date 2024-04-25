@@ -60,7 +60,9 @@ jobs:
           run: tflint -f compact
 
         - name: Run TFLint - report -
-          run: tflint --chdir=$pws --recursive
+          run: |
+            ls -la
+            tflint --chdir=$pws --recursive
 
 #    - name: Terraform Plan
 #      run: terraform plan
