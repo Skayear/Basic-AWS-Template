@@ -42,6 +42,11 @@ jobs:
       runs-on: ubuntu-latest
 
       steps:
+        - name: Clone repo
+          uses: actions/checkout@v2
+          with:
+            persist-credentials: false
+
         - uses: terraform-linters/setup-tflint@v4
           name: Setup TFLint
           with:
