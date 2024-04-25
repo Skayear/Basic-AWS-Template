@@ -38,7 +38,9 @@ jobs:
             key: ${{ matrix.os }}-tflint-${{ hashFiles('.tflint.hcl') }}
 
         - name: Run TFSec - report -
-          run: tfsec --config-file tfsec.yml
+          run: |
+            ls -la
+            tfsec --config-file tfsec.yml
 
     tflint:
       name: tflint report
@@ -69,7 +71,6 @@ jobs:
 
         - name: Run TFLint - report -
           run: |
-            ls -la
             tflint --chdir=$pws --recursive
 
 #    - name: Terraform Plan
