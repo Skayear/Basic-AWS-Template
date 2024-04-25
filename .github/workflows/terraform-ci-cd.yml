@@ -37,6 +37,9 @@ jobs:
             path: ~/.tflint.d/plugins
             key: ${{ matrix.os }}-tflint-${{ hashFiles('.tflint.hcl') }}
 
+        - name: Run TFSec - report -
+          run: tfsec --config-file tfsec.yml
+
     tflint:
       name: tflint report
       runs-on: ubuntu-latest
